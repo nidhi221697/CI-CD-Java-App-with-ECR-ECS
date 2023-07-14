@@ -6,9 +6,11 @@ pipeline {
     agent any
     
     environment {
-        registryCredential = 'ecr:us-east-1:awscreds'
-        appRegistry = '334671708617.dkr.ecr.us-east-1.amazonaws.com/ecr'
-        awsRegistry = "https://334671708617.dkr.ecr.us-east-1.amazonaws.com"
+        registryCredential = 'ecr:ap-south-1:awscreds'
+        #appRegistry = '334671708617.dkr.ecr.us-east-1.amazonaws.com/ecr'
+         appRegistry = 'public.ecr.aws/j1d7c5r7/nidhi_ecs_project'
+         awsRegistry = "https://public.ecr.aws/j1d7c5r7/nidhi_ecs_project"
+        #awsRegistry = "https://334671708617.dkr.ecr.us-east-1.amazonaws.com"
         cluster = "Stage"
         service = "service-stage"
     }
@@ -35,7 +37,7 @@ pipeline {
         
          stage('Deploy to ECS staging') {
              steps {
-                 withAWS(credentials: 'awscreds', region: 'us-east-1') {
+                 withAWS(credentials: 'awscreds', region: 'ap-south-1') {
                      sh 'aws ecs update-service --cluster ${cluster} --service ${service} --force-new-deployment'
                  } 
              }
