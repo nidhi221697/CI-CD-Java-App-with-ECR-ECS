@@ -7,10 +7,10 @@ pipeline {
     
     environment {
         registryCredential = 'ecr:ap-south-1:awscreds'
-        #appRegistry = '334671708617.dkr.ecr.us-east-1.amazonaws.com/ecr'
+       // appRegistry = '334671708617.dkr.ecr.us-east-1.amazonaws.com/ecr'
          appRegistry = 'public.ecr.aws/j1d7c5r7/nidhi_ecs_project'
          awsRegistry = "https://public.ecr.aws/j1d7c5r7/nidhi_ecs_project"
-        #awsRegistry = "https://334671708617.dkr.ecr.us-east-1.amazonaws.com"
+       // awsRegistry = "https://334671708617.dkr.ecr.us-east-1.amazonaws.com"
         cluster = "Stage"
         service = "service-stage"
     }
