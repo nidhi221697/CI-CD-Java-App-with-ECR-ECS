@@ -20,7 +20,7 @@ stages {
                 script {
                     sh "rm -rf CI-CD-Java-App-with-ECR-ECS"
                     sh "git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git"
-                    sh "copy pom.xml Dockerfiles/app/pom.xml"
+                    sh "copy -f pom.xml Dockerfiles/app/"
                     sh 'ls'
                     sh "mvn clean package"
                     //dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", "./Dockerfiles/App/")
@@ -30,10 +30,6 @@ stages {
         stage('Build App Image') {
             steps {
                 script {
-                    sh "rm -rf CI-CD-Java-App-with-ECR-ECS"
-                    sh "git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git"
-                    sh "copy pom.xml Dockerfiles/pom.xml"
-                    sh 'ls'
                     dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", "./Dockerfiles/App/")
                 }
             }
