@@ -1,6 +1,6 @@
 FROM openjdk:8 AS BUILD_IMAGE
 #FROM maven:3.5-jdk AS BUILD_IMAGE
-RUN rm -rf CI-CD-Java-App-with-ECR-ECS
+#RUN rm -rf CI-CD-Java-App-with-ECR-ECS
 RUN apt update && apt install maven -y
  
 #RUN apt install git -y
