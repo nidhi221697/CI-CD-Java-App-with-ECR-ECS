@@ -27,7 +27,6 @@ stages {
                 }
             }
         }
-    stages {
         stage('Build App Image') {
             steps {
                 script {
