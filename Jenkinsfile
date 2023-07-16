@@ -19,6 +19,7 @@ pipeline {
         stage('Build App Image') {
             steps {
                 script {
+                    sh "rm -rf CI-CD-Java-App-with-ECR-ECS"
                     sh "git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git"
                     dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", "./Dockerfiles/App/")
                 }
