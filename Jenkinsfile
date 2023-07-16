@@ -21,7 +21,7 @@ stages {
                     sh "rm -rf CI-CD-Java-App-with-ECR-ECS"
                     sh "git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git"
                     //sh "mv pom.xml Dockerfiles/app/"
-                    sh 'ls'
+                    sh 'ls -al'
                     sh "mvn clean package"
                     //dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", "./Dockerfiles/App/")
                 }
