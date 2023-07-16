@@ -7,8 +7,8 @@ COPY . .
 #RUN git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git
 #WORKDIR CI-CD-Java-App-with-ECR-ECS
 #RUN mvn install package 
-#clean-f pom.xml clean package
-RUN mvn package
+RUN mvn -f pom.xml clean package
+#RUN mvn package
 
 FROM tomcat:8-jre11
 #remove default 
