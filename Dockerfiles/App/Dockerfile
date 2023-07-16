@@ -4,7 +4,8 @@ RUN apt update && apt install maven -y
 #RUN apt install git -y
 #COPY CI-CD-Java-App-with-ECR-ECS/* . 
 #COPY pom.xml .
-RUN 'git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git'
+RUN git remote add origin https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git
+RUN git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git
 RUN cd CI-CD-Java-App-with-ECR-ECS/ && mvn install
 #RUN mvn install package 
 #RUN mvn install
