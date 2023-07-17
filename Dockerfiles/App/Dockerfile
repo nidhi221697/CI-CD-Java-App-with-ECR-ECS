@@ -1,6 +1,7 @@
 FROM openjdk:8 AS BUILD_IMAGE
 RUN apt update && apt install maven -y
-
+RUN mkdir -p /var/www/git-clone
+WORKDIR /var/www/git-clone
 #COPY CI-CD-Java-App-with-ECR-ECS/* . 
 #COPY pom.xml .
 #RUN git remote add origin https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git
