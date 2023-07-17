@@ -1,4 +1,4 @@
-FROM dquintela/openjdk-8-jdk-alpine AS BUILD_IMAGE
+FROM ubuntu AS BUILD_IMAGE
 #FROM openjdk:8 AS BUILD_IMAGE
 RUN apt update && apt install maven -y
 RUN mkdir -p /var/www/git-clone
