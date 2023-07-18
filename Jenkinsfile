@@ -28,7 +28,7 @@ stages {
             script {
                 sh "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/j1d7c5r7"
                 sh "docker push public.ecr.aws/j1d7c5r7/nidhi_ecs_project:${BUILD_NUMBER}"
-                sh "docker push public.ecr.aws/j1d7c5r7/nidhi_ecs_project:latest"
+                //sh "docker push public.ecr.aws/j1d7c5r7/nidhi_ecs_project:latest"
                 //ocker.withRegistry( awsRegistry, registryCredential ) {
                 //dockerImage.push("$BUILD_NUMBER")
                 //dockerImage.push('latest')
