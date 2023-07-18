@@ -14,7 +14,7 @@ COPY pom.xml .
 RUN mvn -f /var/www/git-clone/pom.xml clean package
 
 
-FROM 8.5.91-jre11-temurin-jammy
+FROM tomcat:8.5.91-jre11-temurin-jammy
 #tomcat:8-jre11
 #remove default 
 RUN rm -rf /usr/local/tomcat/webapps/*
