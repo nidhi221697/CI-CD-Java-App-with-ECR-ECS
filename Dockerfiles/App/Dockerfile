@@ -16,7 +16,7 @@ RUN mvn -f /var/www/git-clone/pom.xml clean package
 #FROM tomcat:8.5.91-jre11-temurin-jammy
 #FROM tomcat:8.5.91-jdk21-openjdk-slim
 FROM tomcat:10.1.11-jre17-temurin-jammy
-RUN rm -rf /usr/local/tomcat/webapps/*
+#RUN rm -rf /usr/local/tomcat/webapps/*
 #copy build 
 COPY --from=BUILD_IMAGE  /var/www/git-clone/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
