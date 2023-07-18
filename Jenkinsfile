@@ -15,20 +15,6 @@ pipeline {
         service = "service-stage"
     }
 stages {
-        /**stage('mvn package') {
-            steps {
-                script {
-                    sh "rm -rf CI-CD-Java-App-with-ECR-ECS"
-                   // sh "git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git"
-                    //sh "copy pom.xml /Dockerfiles/app/"
-                    sh 'ls -al'
-                    sh pwd
-                    sh "mvn clean package"
-                    //dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", "./Dockerfiles/App/")
-                    dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", ".")
-                }
-            }
-        }**/
         stage('Build App Image') {
             steps {
                 script {
