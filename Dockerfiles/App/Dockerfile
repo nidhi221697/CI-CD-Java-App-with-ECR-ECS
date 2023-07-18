@@ -1,6 +1,6 @@
 FROM openjdk AS BUILD_IMAGE
 #FROM ubuntu AS BUILD_IMAGE
-RUN apt-get update && apt-get install maven -y
+RUN yum update && yum install maven -y
 RUN mkdir -p /var/www/git-clone
 WORKDIR /var/www/git-clone
 #COPY CI-CD-Java-App-with-ECR-ECS/* . 
