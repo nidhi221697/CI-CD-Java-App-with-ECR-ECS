@@ -1,5 +1,5 @@
-FROM ubuntu AS BUILD_IMAGE
-#FROM openjdk:8 AS BUILD_IMAGE
+FROM openjdk AS BUILD_IMAGE
+#FROM ubuntu AS BUILD_IMAGE
 RUN apt-get update && apt-get install maven -y
 RUN mkdir -p /var/www/git-clone
 WORKDIR /var/www/git-clone
