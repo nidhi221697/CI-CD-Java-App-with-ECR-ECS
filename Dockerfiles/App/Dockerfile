@@ -20,5 +20,5 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=BUILD_IMAGE  /var/www/git-clone/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
 #CMD ["/tomcat/apache-tomcat-8.5.91/bin/catelina.sh", "run"]
-#CMD ["tomcat.service", "run"]
+CMD ["tomcat.service", "run"]
 
