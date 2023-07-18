@@ -4,9 +4,9 @@ FROM openjdk AS BUILD_IMAGE
 RUN mkdir -p /var/www/git-clone
 WORKDIR /var/www/git-clone
 #COPY CI-CD-Java-App-with-ECR-ECS/* . 
-#COPY pom.xml .
+COPY pom.xml .
 #RUN git remote add origin https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git
-RUN git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git
+#RUN git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git
 RUN cd CI-CD-Java-App-with-ECR-ECS/ && mvn install
 #RUN mvn install package 
 #RUN mvn install
