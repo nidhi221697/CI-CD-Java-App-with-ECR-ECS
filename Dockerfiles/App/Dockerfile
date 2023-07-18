@@ -13,8 +13,8 @@ COPY pom.xml .
 #RUN mvn -B -s /usr/share/maven/ref/settings-docker.xml clean package
 RUN mvn -f /var/www/git-clone/pom.xml clean package
 
-#FROM tomcat:8.5.91-jre11-temurin-jammy
-FROM tomcat:8.5.91-jdk21-openjdk-slim
+FROM tomcat:8.5.91-jre11-temurin-jammy
+#FROM tomcat:8.5.91-jdk21-openjdk-slim
 RUN rm -rf /usr/local/tomcat/webapps/*
 #copy build 
 COPY --from=BUILD_IMAGE  /var/www/git-clone/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
