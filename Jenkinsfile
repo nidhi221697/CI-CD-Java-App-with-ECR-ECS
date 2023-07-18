@@ -27,10 +27,12 @@ stages {
           steps{
             script {
                 sh "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/j1d7c5r7"
-                #docker.withRegistry( awsRegistry, registryCredential ) {
                 dockerImage.push("$BUILD_NUMBER")
                 dockerImage.push('latest')
-              #}
+                //ocker.withRegistry( awsRegistry, registryCredential ) {
+                //dockerImage.push("$BUILD_NUMBER")
+                //dockerImage.push('latest')
+              //}
             }
           }
         }
