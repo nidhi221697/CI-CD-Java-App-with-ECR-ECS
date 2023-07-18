@@ -14,7 +14,8 @@ COPY pom.xml .
 RUN mvn -f /var/www/git-clone/pom.xml clean package
 
 
-FROM tomcat:8-jre11
+FROM tomcat:9-jre17
+#tomcat:8-jre11
 #remove default 
 RUN rm -rf /usr/local/tomcat/webapps/*
 #copy build 
