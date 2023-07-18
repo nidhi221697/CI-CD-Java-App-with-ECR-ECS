@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-8-alpine AS BUILD_IMAGE
+FROM maven AS BUILD_IMAGE
 #FROM openjdk AS BUILD_IMAGE
 #RUN apt update && apt install maven -y
 RUN mkdir -p /var/www/git-clone
