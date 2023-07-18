@@ -7,9 +7,9 @@ WORKDIR /var/www/git-clone
 COPY pom.xml .
 #RUN git remote add origin https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git
 #RUN git clone https://github.com/nidhi221697/CI-CD-Java-App-with-ECR-ECS.git
-RUN cd CI-CD-Java-App-with-ECR-ECS/ && mvn install
+#RUN cd CI-CD-Java-App-with-ECR-ECS/ && mvn install
 #RUN mvn install package 
-#RUN mvn install
+RUN mvn install
 
 
 FROM tomcat:8-jre11
