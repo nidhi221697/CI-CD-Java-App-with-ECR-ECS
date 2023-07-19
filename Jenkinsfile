@@ -18,7 +18,7 @@ stages {
         stage('Build App Image') {
             steps {
                 script {
-                    #dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", "./Dockerfiles/App/")
+                    //dockerImage = docker.build( appRegistry + ":$BUILD_NUMBER", "./Dockerfiles/App/")
                     sh "docker build -t public.ecr.aws/j1d7c5r7/nidhi_ecs_project:$BUILD_NUMBER ./Dockerfiles/App/ --no-cache"
                 }
             }
